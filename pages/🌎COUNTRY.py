@@ -133,6 +133,7 @@ with st.container():
     graph_cities_country = graph_cities_country.sort_values(by='Quantidade de Cidades', ascending=False)
     fig = px.bar(graph_cities_country, x='Países', y='Quantidade de Cidades', text='Quantidade de Cidades', text_auto='.0s')
     fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
+    fig.update_layout(xaxis={'tickangle': 45})
     st.plotly_chart(fig, use_container_width=True)
 with st.container():
     st.markdown("""---""")
@@ -145,6 +146,7 @@ with st.container():
         fig = px.bar(graph_avaliation_country, x='País', y='Média de avaliações', text='Média de avaliações',
                      text_auto='.4s')
         fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
+        fig.update_layout(xaxis={'tickangle': 45})
         st.plotly_chart(fig, use_container_width=True)
     with col2:
         col2.markdown('Média de um prato para dois por país')
@@ -154,6 +156,7 @@ with st.container():
         graph_price_country = graph_price_country.sort_values(by='Média do valor', ascending=False)
         fig = px.bar(graph_price_country, x='País', y='Média do valor', text='Média do valor', text_auto='.4s')
         fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
+        fig.update_layout(xaxis={'tickangle': 45})
         st.plotly_chart(fig, use_container_width=True)
 with st.container():
     st.markdown("""---""")
@@ -166,6 +169,7 @@ with st.container():
         graph_price_categori_top5 = graph_price_categori.sort_values(by='Quantidade', ascending=False).head(5)
         fig = px.bar(graph_price_categori_top5, x='País', y='Quantidade', text='Quantidade', text_auto='.0s')
         fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
+        fig.update_layout(xaxis={'tickangle': 45})
         st.plotly_chart(fig, use_container_width=True)
     with col2:
         col2.markdown('Top 5 restaurantes - categoria de preço cheap')
@@ -176,4 +180,5 @@ with st.container():
 
         fig = px.bar(graph_price_categori_top5, x='País', y='Quantidade', text='Quantidade', text_auto='.0s')
         fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
+        fig.update_layout(xaxis={'tickangle': 45})
         st.plotly_chart(fig, use_container_width=True)

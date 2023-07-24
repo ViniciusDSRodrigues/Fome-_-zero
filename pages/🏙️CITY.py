@@ -126,6 +126,7 @@ with st.container():
     fig = px.bar(register_restaurant_per_city_top10, x='Cidade', y="Quantidade de restaurantes", text="Quantidade de restaurantes",
                  text_auto='.4s', color='País')
     fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
+    fig.update_layout(xaxis={'tickangle': 45})
     st.plotly_chart(fig, use_container_width=True)
 with st.container():
     st.markdown("""---""")
@@ -163,5 +164,6 @@ with st.container():
     fig = px.bar(qtde_cuisines_top10, x='Cidade', y="Quantidade", text="Quantidade",
                  text_auto='.2s', color='País')
     fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
+    fig.update_layout(xaxis={'tickangle': 45})
     st.plotly_chart(fig, use_container_width=True)
 

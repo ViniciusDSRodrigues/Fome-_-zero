@@ -124,6 +124,7 @@ with st.container():
     fig = px.bar(graph_rest_country, x='Países', y='Quantidade de Restaurantes', text='Quantidade de Restaurantes',
                  text_auto='.4s')
     fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
+    fig.update_layout(xaxis={'tickangle': 45})
     st.plotly_chart(fig, use_container_width=True)
 with st.container():
     st.markdown("""---""")
@@ -131,7 +132,7 @@ with st.container():
     graph_cities_country = df_final.loc[:, ['country', 'city']].groupby(['country']).nunique().reset_index()
     graph_cities_country.columns = ['Países', 'Quantidade de Cidades']
     graph_cities_country = graph_cities_country.sort_values(by='Quantidade de Cidades', ascending=False)
-    fig = px.bar(graph_cities_country, x='Países', y='Quantidade de Cidades', text='Quantidade de Cidades', text_auto='.0s')
+    fig = px.bar(graph_cities_country, x='Países', y='Quantidade de Cidades', text='Quantidade de Cidades', text_auto='.2s')
     fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     fig.update_layout(xaxis={'tickangle': 45})
     st.plotly_chart(fig, use_container_width=True)
@@ -167,7 +168,7 @@ with st.container():
         , ['restaurant_id', 'country']].groupby(['country']).nunique().reset_index()
         graph_price_categori.columns = ['País', 'Quantidade']
         graph_price_categori_top5 = graph_price_categori.sort_values(by='Quantidade', ascending=False).head(5)
-        fig = px.bar(graph_price_categori_top5, x='País', y='Quantidade', text='Quantidade', text_auto='.0s')
+        fig = px.bar(graph_price_categori_top5, x='País', y='Quantidade', text='Quantidade', text_auto='.4s')
         fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
         fig.update_layout(xaxis={'tickangle': 45})
         st.plotly_chart(fig, use_container_width=True)
@@ -178,7 +179,7 @@ with st.container():
         graph_price_categori.columns = ['País', 'Quantidade']
         graph_price_categori_top5 = graph_price_categori.sort_values(by='Quantidade', ascending=False).head(5)
 
-        fig = px.bar(graph_price_categori_top5, x='País', y='Quantidade', text='Quantidade', text_auto='.0s')
+        fig = px.bar(graph_price_categori_top5, x='País', y='Quantidade', text='Quantidade', text_auto='.4s')
         fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
         fig.update_layout(xaxis={'tickangle': 45})
         st.plotly_chart(fig, use_container_width=True)
